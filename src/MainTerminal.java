@@ -1,11 +1,11 @@
 import java.util.Scanner;
 
 /**
- * Terminal main class
+ * Main terminal class
  * @author  David Brousseau
  * @version 0.1
  */
-public class TerminalNRA {
+public class MainTerminal {
 
     /**
      * Launch the software.
