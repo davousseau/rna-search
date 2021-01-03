@@ -6,7 +6,7 @@
 Projet effectué dans le cadre du cours **INF2120 Programmation II**, remis à l'enseignant **Bruno Malenfant** à l'[Université du Québec à Montréal](https://etudier.uqam.ca/) le 12 octobre 2017. Ce projet a été retranscris en janvier 2021 pour le rendre public et l'insérer dans mon porte-folio.
 
 ## Description
-TODO:
+Simulation d'une recherche moléculaire qui retourne une combinaison d'un [nucléotide](https://fr.wikipedia.org/wiki/Nucl%C3%A9otide) et d'un [acid aminé](https://fr.wikipedia.org/wiki/Acide_amin%C3%A9). À noter que ce logiciel n'a pas d'interface graphique.
 
 ## Environnement suggéré
 - [VS Code](https://code.visualstudio.com/), éditeur de texte pour modifier le code.
