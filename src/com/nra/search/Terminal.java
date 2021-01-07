@@ -13,10 +13,9 @@ public class Terminal {
      * Launch the software.
      * @param args Arguments
      */
-    public static int main(String args[]) {
+    public static void main(String args[]) {
         Scanner scanner = new Scanner(System.in);
         // TODO:
         scanner.close();
-        return 0;
     }
 }
