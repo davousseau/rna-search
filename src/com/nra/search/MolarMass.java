@@ -1,3 +1,5 @@
+package com.nra.search;
+
 /**
  * Molar mass of the molecule
  * @author  David Brousseau

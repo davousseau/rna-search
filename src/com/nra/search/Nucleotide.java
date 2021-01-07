@@ -1,3 +1,5 @@
+package com.nra.search;
+
 /**
  * Nucleotide of the RNA
  * @author  David Brousseau

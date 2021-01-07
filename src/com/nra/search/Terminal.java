@@ -1,11 +1,13 @@
+package com.nra.search;
+
 import java.util.Scanner;
 
 /**
- * Main terminal class
+ * Terminal main class
  * @author  David Brousseau
  * @version 0.1
  */
-public class MainTerminal {
+public class Terminal {
 
     /**
      * Launch the software.

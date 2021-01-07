@@ -1,13 +1,15 @@
+package com.nra.search;
+
 /**
- * Carbon molecule
+ * Nitrogen molecule
  * @author  David Brousseau
  * @version 0.1
  */
-public enum Carbon {
+public enum Nitrogen {
     A(5),
-    C(4),
+    C(3),
     G(5),
-    U(4);
+    U(2);
 
     /** Amount of atom */
     private final int amount;
@@ -16,10 +18,10 @@ public enum Carbon {
      * Constructeur
      * @param amount Amount of atom
      */
-    Carbon(int amount) { this.amount = amount; }
+    Nitrogen(int amount) { this.amount = amount; }
 
     /**
-     * Get the amount of atom for the carbon molecule.
+     * Get the amount of atom for the nitrogen molecule.
      * @return The amount
      */
     public int getAmount() { return this.amount; }
