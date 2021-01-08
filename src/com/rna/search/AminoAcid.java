@@ -1,4 +1,4 @@
-package com.nra.search;
+package com.rna.search;
 
 import java.util.ArrayList;
 import java.util.Collections;

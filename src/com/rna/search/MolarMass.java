@@ -1,4 +1,4 @@
-package com.nra.search;
+package com.rna.search;
 
 /**
  * Molar mass of the molecule

@@ -1,8 +1,8 @@
-package com.nra.search;
-
-import com.nra.search.Nucleotide.Molecule;
+package com.rna.search;
 
 import java.util.ArrayList;
+
+import com.rna.search.Nucleotide.Molecule;
 
 /**
  * Codon of amino acid

@@ -1,15 +1,15 @@
-package com.nra.search;
+package com.rna.search;
 
 /**
- * Hydrogen molecule
+ * Nitrogen molecule
  * @author  David Brousseau
  * @version 0.1
  */
-public enum Hydrogen {
+public enum Nitrogen {
     A(5),
-    C(5),
+    C(3),
     G(5),
-    U(4);
+    U(2);
 
     /** Amount of atom */
     private final int amount;
@@ -18,10 +18,10 @@ public enum Hydrogen {
      * Constructeur
      * @param amount Amount of atom
      */
-    Hydrogen(int amount) { this.amount = amount; }
+    Nitrogen(int amount) { this.amount = amount; }
 
     /**
-     * Get the amount of atom for the hydrogen molecule.
+     * Get the amount of atom for the nitrogen molecule.
      * @return The amount
      */
     public int getAmount() { return this.amount; }
