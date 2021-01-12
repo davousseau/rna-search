@@ -80,6 +80,12 @@ public enum AminoAcid {
     private final ArrayList<Codon> codons;
 
     /**
+     * Get the codons of nucleotide molecules.
+     * @return The codons
+     */
+    public ArrayList<Codon> getCodons() { return this.codons; }
+
+    /**
      * Constructeur
      * @param codons Codons of nucleotide molecules
      */

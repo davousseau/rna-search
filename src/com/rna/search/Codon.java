@@ -9,27 +9,19 @@ import com.rna.search.Nucleotide.Molecule;
  * @author  David Brousseau
  * @version 0.1
  */
-public class Codon {
+public class Codon extends ArrayList<Nucleotide> {
 
-    /** Nucleotide molecules */
-    private final ArrayList<Nucleotide> nucleotides;
-
-    /**
-     * Get the nucleotide molecules
-     * @return The nucleotides
-     */
-    public ArrayList<Nucleotide> getNucleotides() { return this.nucleotides; }
+    /** Serializable class id */
+    private static final long serialVersionUID = 1L;
 
     /**
      * Constructor
      * @param nucleotides Nucleotide molecules
      */
     public Codon(String nucleotides) {
+        super();
         if (nucleotides.length() != 3) { throw new UnknownError("Unknown size"); }
-        this.nucleotides = new ArrayList<>();
-        for (int i = 0; i < nucleotides.length(); i++) {
-            this.nucleotides.add(castToNucleotide(nucleotides.charAt(i)));
-        }
+        for (int i = 0; i < nucleotides.length(); i++) { this.add(castToNucleotide(nucleotides.charAt(i))); }
     }
 
     /**
