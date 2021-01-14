@@ -75,6 +75,8 @@ public class Nucleotide {
         }
     }
 
+    public Molecule getMolecule() { return this.molecule; }
+
     /**
      * Get the amount of nitrogen molecule
      * @return The amount
@@ -118,6 +120,26 @@ public class Nucleotide {
      * @param molecule Molecule of the nucleotide
      */
     public Nucleotide(Molecule molecule) { this.molecule = molecule; }
+
+    /**
+     * Cast a character to an appropriate nucleotide.
+     * @param  character Character to cast
+     * @return           The nucleotide
+     */
+    public static Nucleotide castToNucleotide(char character) {
+        switch (character) {
+        case 'A':
+            return new Nucleotide(Molecule.A);
+        case 'C':
+            return new Nucleotide(Molecule.C);
+        case 'G':
+            return new Nucleotide(Molecule.G);
+        case 'U':
+            return new Nucleotide(Molecule.U);
+        default:
+            throw new UnknownError("Unknown molecule");
+        }
+    }
 
     /**
      * Return the molecule name of the nucleotide.
