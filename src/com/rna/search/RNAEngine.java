@@ -45,8 +45,18 @@ public class RNAEngine {
      * @param input Request input
      */
     public void searchByAbbreviation(String input) {
-        positions = new int[input.length() / 3];
-        // TODO:
+        final int size = rna.size();
+        positions = new int[size];
+        ArrayList<Codon> codons = AminoAcid.castToAminoAcid(input).getCodons();
+        int k = 0;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < codons.size(); j++) {
+                if (rna.get(i).equals(codons.get(j))) {
+                    positions[k] = (i * 3) + 1;
+                    k++;
+                }
+            }
+        }
     }
 
     /**
@@ -54,7 +64,7 @@ public class RNAEngine {
      * @param input Request input
      */
     public void searchByNucleotides(String input) {
-        positions = new int[input.length() / 3];
+        positions = new int[rna.size()];
         // TODO:
     }
 
@@ -66,7 +76,7 @@ public class RNAEngine {
         int sum = 0;
         for (int i = 0; i < rna.size(); i++) {
             Codon codon = rna.get(i);
-            for (int j = 0; j < codon.size(); j++) { sum += codon.get(i).getCarbon(); }
+            for (int j = 0; j < codon.size(); j++) { sum += codon.get(j).getCarbon(); }
         }
         return sum;
     }
@@ -79,7 +89,7 @@ public class RNAEngine {
         int sum = 0;
         for (int i = 0; i < rna.size(); i++) {
             Codon codon = rna.get(i);
-            for (int j = 0; j < codon.size(); j++) { sum += codon.get(i).getHydrogen(); }
+            for (int j = 0; j < codon.size(); j++) { sum += codon.get(j).getHydrogen(); }
         }
         return sum;
     }
@@ -92,7 +102,7 @@ public class RNAEngine {
         double sum = 0;
         for (int i = 0; i < rna.size(); i++) {
             Codon codon = rna.get(i);
-            for (int j = 0; j < codon.size(); j++) { sum += codon.get(i).getMolarMass(); }
+            for (int j = 0; j < codon.size(); j++) { sum += codon.get(j).getMolarMass(); }
         }
         return sum;
     }
@@ -105,7 +115,7 @@ public class RNAEngine {
         int sum = 0;
         for (int i = 0; i < rna.size(); i++) {
             Codon codon = rna.get(i);
-            for (int j = 0; j < codon.size(); j++) { sum += codon.get(i).getNitrogen(); }
+            for (int j = 0; j < codon.size(); j++) { sum += codon.get(j).getNitrogen(); }
         }
         return sum;
     }
@@ -118,7 +128,7 @@ public class RNAEngine {
         int sum = 0;
         for (int i = 0; i < rna.size(); i++) {
             Codon codon = rna.get(i);
-            for (int j = 0; j < codon.size(); j++) { sum += codon.get(i).getOxygen(); }
+            for (int j = 0; j < codon.size(); j++) { sum += codon.get(j).getOxygen(); }
         }
         return sum;
     }
