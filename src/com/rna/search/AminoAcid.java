@@ -11,7 +11,7 @@ import java.util.Collections;
 public enum AminoAcid {
 
     /** Alanine */
-    ALA(new Codon("GCU"), new Codon("GCC"), new Codon("GCA"), new Codon("GCC")),
+    ALA(new Codon("GCU"), new Codon("GCC"), new Codon("GCA"), new Codon("GCG")),
 
     /** Arginine */
     ARG(new Codon("CGU"), new Codon("CGC"), new Codon("CGA"), new Codon("CGG"), new Codon("AGA"), new Codon("AGG")),
@@ -92,6 +92,16 @@ public enum AminoAcid {
     private AminoAcid(Codon... codons) {
         this.codons = new ArrayList<>();
         Collections.addAll(this.codons, codons);
+    }
+
+    /**
+     * Cast an abbreviation to an appropriate amino acid.
+     * @param  abbreviation Abbreviation to cast
+     * @return              The amino acid
+     */
+    public static AminoAcid castToAminoAcid(String abbreviation) {
+        for (AminoAcid acid : AminoAcid.values()) { if (abbreviation.equals(acid.toString())) { return acid; } }
+        throw new UnknownError("Unknown abbreviation");
     }
 
     /**
