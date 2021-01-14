@@ -122,7 +122,12 @@ public class Terminal {
     /** Print the positions found by the engine. */
     private void printPositions() {
         int positions[] = engine.getPositions();
-        // TODO:
+        String s = "";
+        for (int i = 0; i < positions.length; i++) {
+            if (positions[i] != 0) { s += positions[i]; }
+            if (i != positions.length - 1 && positions[i + 1] != 0) { s += ", "; }
+        }
+        System.out.println(s);
     }
 
     /**
