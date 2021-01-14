@@ -22,6 +22,11 @@ public class Codon extends ArrayList<Nucleotide> {
         for (int i = 0; i < nucleotides.length(); i++) { this.add(Nucleotide.castToNucleotide(nucleotides.charAt(i))); }
     }
 
+    /**
+     * Check if both codons are equal.
+     * @param  codon Codon to check
+     * @return       True or False
+     */
     public boolean equals(Codon codon) {
         if (this.size() == codon.size()) {
             for (int i = 0; i < this.size(); i++) {

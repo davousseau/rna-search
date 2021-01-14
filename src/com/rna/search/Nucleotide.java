@@ -75,6 +75,10 @@ public class Nucleotide {
         }
     }
 
+    /**
+     * Get the nucleotide molecule.
+     * @return The molecule
+     */
     public Molecule getMolecule() { return this.molecule; }
 
     /**
