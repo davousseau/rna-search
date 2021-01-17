@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- * Amino acid codes from IUPAC
+ * Amino acid (from IUPAC)
  * @author  David Brousseau
  * @version 0.1
  */

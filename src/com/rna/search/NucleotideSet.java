@@ -6,11 +6,23 @@ import java.util.Collections;
 import com.rna.search.Nucleotide.Molecule;
 
 /**
- * Nucleotide set codes from IUPAC
+ * Nucleotide set (from IUPAC)
  * @author  David Brousseau
  * @version 0.1
  */
 public enum NucleotideSet {
+
+    /** Adenine */
+    A(new Nucleotide(Molecule.A)),
+
+    /** Cytosine */
+    C(new Nucleotide(Molecule.C)),
+
+    /** Guanine */
+    G(new Nucleotide(Molecule.G)),
+
+    /** Uracil */
+    U(new Nucleotide(Molecule.U)),
 
     /** Purine */
     R(new Nucleotide(Molecule.A), new Nucleotide(Molecule.G)),
@@ -49,8 +61,8 @@ public enum NucleotideSet {
     private ArrayList<Nucleotide> nucleotides;
 
     /**
-     * Get the set of nucleotides.
-     * @return The nucleotides.
+     * Get the nucleotide set.
+     * @return The nucleotides
      */
     public ArrayList<Nucleotide> getNucleotides() { return this.nucleotides; }
 
@@ -61,5 +73,15 @@ public enum NucleotideSet {
     private NucleotideSet(Nucleotide... nucleotides) {
         this.nucleotides = new ArrayList<>();
         Collections.addAll(this.nucleotides, nucleotides);
+    }
+
+    /**
+     * Cast a code to an appropriate nucleotide set.
+     * @param  code Code to cast
+     * @return      The nucleotide set
+     */
+    public static NucleotideSet castToNucleotideSet(String code) {
+        for (NucleotideSet set : NucleotideSet.values()) { if (code.equals(set.toString())) { return set; } }
+        throw new UnknownError("Unknown nucleotide set");
     }
 }
