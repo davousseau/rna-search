@@ -2,6 +2,8 @@ package com.rna.search;
 
 import java.util.ArrayList;
 
+import com.rna.search.Nucleotide.Molecule;
+
 /**
  * Ribonucleic acid engine
  * @author  David Brousseau
@@ -45,15 +47,15 @@ public class RNAEngine {
      * @param input Request input
      */
     public void searchByAbbreviation(String input) {
-        final int size = rna.size();
-        positions = new int[size];
+        final int rnaSize = rna.size();
+        positions = new int[rnaSize];
         ArrayList<Codon> codons = AminoAcid.castToAminoAcid(input).getCodons();
-        int k = 0;
-        for (int i = 0; i < size; i++) {
+        int index = 0;
+        for (int i = 0; i < rnaSize; i++) {
             for (int j = 0; j < codons.size(); j++) {
                 if (rna.get(i).equals(codons.get(j))) {
-                    positions[k] = (i * 3) + 1;
-                    k++;
+                    positions[index] = (i * 3) + 1;
+                    index++;
                 }
             }
         }
@@ -64,8 +66,27 @@ public class RNAEngine {
      * @param input Request input
      */
     public void searchByNucleotides(String input) {
-        positions = new int[rna.size()];
-        // TODO:
+        final int rnaSize = rna.size();
+        final int inputLength = input.length();
+        positions = new int[rnaSize];
+        int index = 0;
+        for (int i = 0; i < rnaSize; i++) {
+            int correspondingCount = 0;
+            for (int j = 0; j < inputLength; j++) {
+                if (inputLength <= (rnaSize * 3)) {
+                    String code = input.substring(j, j + 1);
+                    ArrayList<Nucleotide> corresponding = NucleotideSet.castToNucleotideSet(code).getNucleotides();
+                    for (int k = 0; k < corresponding.size(); k++) {
+                        Molecule nucleotideMolecule = rna.get(i).get(j).getMolecule();
+                        if (nucleotideMolecule == corresponding.get(k).getMolecule()) { correspondingCount++; }
+                    }
+                }
+            }
+            if (correspondingCount == inputLength) {
+                positions[index] = (i * 3) + 1;
+                index++;
+            }
+        }
     }
 
     /**
