@@ -17,6 +17,7 @@ Simulation d'une recherche moléculaire qui retourne une combinaison d'un [nucl�
 ## Environnement suggéré
 - [VS Code](https://code.visualstudio.com/), éditeur de texte pour modifier le code.
     - [Java Extension Pack](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack), extension du language Java.
+    - [Clang-Format](https://marketplace.visualstudio.com/items?itemName=xaver.clang-format), extension pour le formatage du code.
     - [TODO Highlight](https://marketplace.visualstudio.com/items?itemName=wayou.vscode-todo-highlight), extension pour afficher les TODOs.
 
 ## Fonctionnement
@@ -31,9 +32,6 @@ Méthode 1 :
 
 Méthode 2 :
 > On doit saisir un nombre de lettres plus grand que 0 et qui se divise par 3 parmi les suivantes : A, B, C, D, G, H, K, M, N, R, S, U, V, W et Y. Ces lettres (ou séquence de lettres) représentent un acide aminé que l'on peut retrouver dans notre ARN de base.
-
-## Documentation
-- [Java Documentation](https://docs.oracle.com/en/java/)
 
 ## Références
 - [Nucleotide Codes, Amino Acid Codes, and Genetic Codes](https://www.genome.jp/kegg/catalog/codes1.html)
