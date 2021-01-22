@@ -1,9 +1,8 @@
 package com.rna.search;
 
+import com.rna.search.Nucleotide.Molecule;
 import java.util.ArrayList;
 import java.util.Collections;
-
-import com.rna.search.Nucleotide.Molecule;
 
 /**
  * Nucleotide set (from IUPAC)
@@ -81,7 +80,9 @@ public enum NucleotideSet {
      * @return      The nucleotide set
      */
     public static NucleotideSet castToNucleotideSet(String code) {
-        for (NucleotideSet set : NucleotideSet.values()) { if (code.equals(set.toString())) { return set; } }
+        for (NucleotideSet set : NucleotideSet.values()) {
+            if (code.equals(set.toString())) { return set; }
+        }
         throw new UnknownError("Unknown nucleotide set");
     }
 }

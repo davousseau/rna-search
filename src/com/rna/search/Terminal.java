@@ -57,16 +57,16 @@ public class Terminal {
      */
     private boolean isAminoAcid(String input) {
         if (input.equals(AminoAcid.ALA.toString()) || input.equals(AminoAcid.ARG.toString())
-                || input.equals(AminoAcid.ASN.toString()) || input.equals(AminoAcid.ASP.toString())
-                || input.equals(AminoAcid.CYS.toString()) || input.equals(AminoAcid.GLN.toString())
-                || input.equals(AminoAcid.GLU.toString()) || input.equals(AminoAcid.GLY.toString())
-                || input.equals(AminoAcid.HIS.toString()) || input.equals(AminoAcid.ILE.toString())
-                || input.equals(AminoAcid.LEU.toString()) || input.equals(AminoAcid.LYS.toString())
-                || input.equals(AminoAcid.MET.toString()) || input.equals(AminoAcid.PHE.toString())
-                || input.equals(AminoAcid.PRO.toString()) || input.equals(AminoAcid.PYL.toString())
-                || input.equals(AminoAcid.SEC.toString()) || input.equals(AminoAcid.SER.toString())
-                || input.equals(AminoAcid.THR.toString()) || input.equals(AminoAcid.TRP.toString())
-                || input.equals(AminoAcid.TYR.toString()) || input.equals(AminoAcid.VAL.toString())) {
+            || input.equals(AminoAcid.ASN.toString()) || input.equals(AminoAcid.ASP.toString())
+            || input.equals(AminoAcid.CYS.toString()) || input.equals(AminoAcid.GLN.toString())
+            || input.equals(AminoAcid.GLU.toString()) || input.equals(AminoAcid.GLY.toString())
+            || input.equals(AminoAcid.HIS.toString()) || input.equals(AminoAcid.ILE.toString())
+            || input.equals(AminoAcid.LEU.toString()) || input.equals(AminoAcid.LYS.toString())
+            || input.equals(AminoAcid.MET.toString()) || input.equals(AminoAcid.PHE.toString())
+            || input.equals(AminoAcid.PRO.toString()) || input.equals(AminoAcid.PYL.toString())
+            || input.equals(AminoAcid.SEC.toString()) || input.equals(AminoAcid.SER.toString())
+            || input.equals(AminoAcid.THR.toString()) || input.equals(AminoAcid.TRP.toString())
+            || input.equals(AminoAcid.TYR.toString()) || input.equals(AminoAcid.VAL.toString())) {
             return true;
         }
         return false;
@@ -100,19 +100,19 @@ public class Terminal {
     private boolean isNucleotideSet(String input) {
         for (int i = 0; i < input.length(); i++) {
             if (input.charAt(i) != NucleotideSet.R.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.Y.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.S.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.W.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.K.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.M.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.B.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.D.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.H.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.V.toString().charAt(0)
-                    && input.charAt(i) != NucleotideSet.N.toString().charAt(0)
-                    //@formatter:off
-                    && !isACGU(input.substring(i, i + 1))) {
-                    //@formatter:on
+                && input.charAt(i) != NucleotideSet.Y.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.S.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.W.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.K.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.M.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.B.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.D.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.H.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.V.toString().charAt(0)
+                && input.charAt(i) != NucleotideSet.N.toString().charAt(0)
+                //@formatter:off
+                && ! isACGU(input.substring(i, i + 1))) {
+                //@formatter:on
                 return false;
             }
         }
@@ -191,7 +191,7 @@ public class Terminal {
      * @param input Request input
      */
     private void validateRequestFormat(String input) {
-        if (!((isAminoAcid(input) || isNucleotideSet(input)) && isMultiple3(input))) {
+        if (! ((isAminoAcid(input) || isNucleotideSet(input)) && isMultiple3(input))) {
             System.err.println("Votre requête est invalide");
             System.out.println("--------------------------");
             exit(1);
@@ -203,7 +203,7 @@ public class Terminal {
      * @param input RNA input
      */
     private void validateRNAFormat(String input) {
-        if (!(isACGU(input) && isGreaterThan5(input) && isMultiple3(input))) {
+        if (! (isACGU(input) && isGreaterThan5(input) && isMultiple3(input))) {
             System.err.println("Votre ARN est invalide");
             System.out.println("--------------------------");
             exit(1);

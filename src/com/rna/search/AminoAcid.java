@@ -100,7 +100,9 @@ public enum AminoAcid {
      * @return              The amino acid
      */
     public static AminoAcid castToAminoAcid(String abbreviation) {
-        for (AminoAcid acid : AminoAcid.values()) { if (abbreviation.equals(acid.toString())) { return acid; } }
+        for (AminoAcid acid : AminoAcid.values()) {
+            if (abbreviation.equals(acid.toString())) { return acid; }
+        }
         throw new UnknownError("Unknown abbreviation");
     }
 

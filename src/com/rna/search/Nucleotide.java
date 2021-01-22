@@ -24,16 +24,11 @@ public class Nucleotide {
      */
     public int getCarbon() {
         switch (molecule) {
-        case A:
-            return Carbon.A.getAmount();
-        case C:
-            return Carbon.C.getAmount();
-        case G:
-            return Carbon.G.getAmount();
-        case U:
-            return Carbon.U.getAmount();
-        default:
-            throw new UnknownError("Unknown molecule");
+        case A: return Carbon.A.getAmount();
+        case C: return Carbon.C.getAmount();
+        case G: return Carbon.G.getAmount();
+        case U: return Carbon.U.getAmount();
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -43,16 +38,11 @@ public class Nucleotide {
      */
     public int getHydrogen() {
         switch (molecule) {
-        case A:
-            return Hydrogen.A.getAmount();
-        case C:
-            return Hydrogen.C.getAmount();
-        case G:
-            return Hydrogen.G.getAmount();
-        case U:
-            return Hydrogen.U.getAmount();
-        default:
-            throw new UnknownError("Unknown molecule");
+        case A: return Hydrogen.A.getAmount();
+        case C: return Hydrogen.C.getAmount();
+        case G: return Hydrogen.G.getAmount();
+        case U: return Hydrogen.U.getAmount();
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -62,16 +52,11 @@ public class Nucleotide {
      */
     public int getMolarMass() {
         switch (molecule) {
-        case A:
-            return MolarMass.A.getWeight();
-        case C:
-            return MolarMass.C.getWeight();
-        case G:
-            return MolarMass.G.getWeight();
-        case U:
-            return MolarMass.U.getWeight();
-        default:
-            throw new UnknownError("Unknown molecule");
+        case A: return MolarMass.A.getWeight();
+        case C: return MolarMass.C.getWeight();
+        case G: return MolarMass.G.getWeight();
+        case U: return MolarMass.U.getWeight();
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -87,16 +72,11 @@ public class Nucleotide {
      */
     public int getNitrogen() {
         switch (molecule) {
-        case A:
-            return Nitrogen.A.getAmount();
-        case C:
-            return Nitrogen.C.getAmount();
-        case G:
-            return Nitrogen.G.getAmount();
-        case U:
-            return Nitrogen.U.getAmount();
-        default:
-            throw new UnknownError("Unknown molecule");
+        case A: return Nitrogen.A.getAmount();
+        case C: return Nitrogen.C.getAmount();
+        case G: return Nitrogen.G.getAmount();
+        case U: return Nitrogen.U.getAmount();
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -106,16 +86,11 @@ public class Nucleotide {
      */
     public int getOxygen() {
         switch (molecule) {
-        case A:
-            return Oxygen.A.getAmount();
-        case C:
-            return Oxygen.C.getAmount();
-        case G:
-            return Oxygen.G.getAmount();
-        case U:
-            return Oxygen.U.getAmount();
-        default:
-            throw new UnknownError("Unknown molecule");
+        case A: return Oxygen.A.getAmount();
+        case C: return Oxygen.C.getAmount();
+        case G: return Oxygen.G.getAmount();
+        case U: return Oxygen.U.getAmount();
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -132,16 +107,11 @@ public class Nucleotide {
      */
     public static Nucleotide castToNucleotide(char character) {
         switch (character) {
-        case 'A':
-            return new Nucleotide(Molecule.A);
-        case 'C':
-            return new Nucleotide(Molecule.C);
-        case 'G':
-            return new Nucleotide(Molecule.G);
-        case 'U':
-            return new Nucleotide(Molecule.U);
-        default:
-            throw new UnknownError("Unknown molecule");
+        case 'A': return new Nucleotide(Molecule.A);
+        case 'C': return new Nucleotide(Molecule.C);
+        case 'G': return new Nucleotide(Molecule.G);
+        case 'U': return new Nucleotide(Molecule.U);
+        default: throw new UnknownError("Unknown molecule");
         }
     }
 
@@ -150,5 +120,7 @@ public class Nucleotide {
      * @return The molecule name
      */
     @Override
-    public String toString() { return molecule.toString(); }
+    public String toString() {
+        return molecule.toString();
+    }
 }

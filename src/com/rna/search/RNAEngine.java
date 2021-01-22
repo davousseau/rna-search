@@ -1,8 +1,7 @@
 package com.rna.search;
 
-import java.util.ArrayList;
-
 import com.rna.search.Nucleotide.Molecule;
+import java.util.ArrayList;
 
 /**
  * Ribonucleic acid engine
